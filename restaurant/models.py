@@ -60,3 +60,61 @@ class Personal(DateMixin, SlugMixin):
         super(Personal, self).save(*args, **kwargs)
 
 
+
+class Service(DateMixin, SlugMixin):
+    name = models.CharField(max_length=255, verbose_name="Xidmətin adı")
+    description = models.TextField(verbose_name="Xidmət haqqında")
+    icon = models.ImageField(upload_to=Uploader.upload_photo_for_icon)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ("-created_at",)
+        verbose_name = "Xidmət"
+        verbose_name_plural = "Xidmətlər"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = Generator.create_slug_shortcode(size=15, model_=Service)
+        super(Service, self).save(*args, **kwargs)
+
+
+class Category(DateMixin, SlugMixin):
+    name = models.CharField(max_length=255, verbose_name="Kateqoriyalar")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ("-created_at",)
+        verbose_name = "Kateqoriya"
+        verbose_name_plural = "Kateqoriyalar"
+
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = Generator.create_slug_shortcode(size=15, model_=Category)
+        super(Category, self).save(*args, **kwargs)
+
+
+class Menu(DateMixin, SlugMixin):
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    image = models.ImageField(upload_to=Uploader.upload_photo_for_menu, verbose_name="Yeməyin şəkili", help_text="80x80")
+    food_name = models.CharField(max_length=255, verbose_name="Yeməyin adı")
+    receipt = models.CharField(max_length=255, verbose_name="Yeməyin tərkibi")
+    price = models.CharField(max_length=255, verbose_name="Yeməyin qiyməti")
+
+
+    def __str__(self):
+        return self.food_name
+
+    class Meta:
+        ordering = ("-created_at",)
+        verbose_name = "Menyu"
+        verbose_name_plural = "Menyu"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = Generator.create_slug_shortcode(size=15, model_=Menu)
+        super(Menu, self).save(*args, **kwargs)
