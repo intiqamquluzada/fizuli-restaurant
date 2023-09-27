@@ -118,3 +118,24 @@ class Menu(DateMixin, SlugMixin):
         if not self.slug:
             self.slug = Generator.create_slug_shortcode(size=15, model_=Menu)
         super(Menu, self).save(*args, **kwargs)
+
+
+class Contact(DateMixin, SlugMixin):
+    name_and_surname = models.CharField(max_length=255, verbose_name="Adı və soyadı", null=True, blank=True)
+    email = models.EmailField(verbose_name="Elektron poçtu", null=True, blank=True)
+    subject = models.CharField(max_length=255, verbose_name="Mövzu", null=True, blank=True)
+    message = models.TextField(verbose_name="Mesaj", null=True, blank=True)
+
+
+    def __str__(self):
+        return self.name_and_surname
+
+    class Meta:
+        ordering = ("-created_at",)
+        verbose_name = 'Əlaqə saxlamaq istəyən şəxs'
+        verbose_name_plural = 'Əlaqə saxlamaq istəyən şəxslər'
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = Generator.create_slug_shortcode(size=15, model_=Contact)
+        super(Contact, self).save(*args, **kwargs)

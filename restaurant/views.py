@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from restaurant.models import AboutModel, Personal, Service, Menu
-
+from restaurant.models import AboutModel, Personal, Service, Menu, Contact
+from restaurant.forms import ContactForm
 
 def home_view(request):
     about = AboutModel.objects.first()
@@ -20,7 +20,7 @@ def about_view(request):
 def service_view(request):
     services = Service.objects.order_by("-created_at")
     context = {
-        "services":services,
+        "services": services,
     }
     return render(request, "service.html", context)
 
@@ -31,3 +31,31 @@ def menu_view(request):
         "foods": foods,
     }
     return render(request, "menu.html", context)
+
+
+def contact_view(request):
+    form = ContactForm()
+    if request.method == "POST":
+        form = ContactForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            form = ContactForm()
+
+    else:
+        form = ContactForm()
+
+
+    context = {
+        "form": form,
+    }
+    return render(request, "contact.html", context)
+
+
+def booking_view(request):
+    context = {}
+    return render(request, "booking.html", context)
+
+
+def our_team(request):
+    context = {}
+    return render(request, "team.html", context)
