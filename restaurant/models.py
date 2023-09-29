@@ -139,3 +139,24 @@ class Contact(DateMixin, SlugMixin):
         if not self.slug:
             self.slug = Generator.create_slug_shortcode(size=15, model_=Contact)
         super(Contact, self).save(*args, **kwargs)
+
+
+class Reserve(DateMixin, SlugMixin):
+    name = models.CharField(max_length=255, verbose_name="Adı")
+    phone_number = models.CharField(max_length=255, verbose_name="Əlaqə nömrəsi")
+    reserve_date = models.DateTimeField(verbose_name="Rezerv tarixi və saatı")
+    count_of_guest = models.IntegerField(verbose_name="Qonaq sayı")
+    special_message = models.TextField(verbose_name="Xüsusi istək")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ("-created_at", )
+        verbose_name = "Rezerv"
+        verbose_name_plural = "Rezervlər"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = Generator.create_slug_shortcode(size=15, model_=Reserve)
+        super(Reserve, self).save(*args, **kwargs)

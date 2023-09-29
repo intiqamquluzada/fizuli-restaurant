@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from restaurant.models import AboutModel, Personal, Service, Menu, Contact
-from restaurant.forms import ContactForm
+from restaurant.forms import ContactForm, ReserveForm
+from django.contrib import messages
 
 def home_view(request):
     about = AboutModel.objects.first()
@@ -44,7 +45,6 @@ def contact_view(request):
     else:
         form = ContactForm()
 
-
     context = {
         "form": form,
     }
@@ -52,7 +52,20 @@ def contact_view(request):
 
 
 def booking_view(request):
-    context = {}
+    form = ReserveForm()
+    if request.method == "POST":
+        form = ReserveForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Məlumatlar göndərildi")
+            form = ReserveForm()
+        else:
+
+            messages.error(request, "Telefon yalnisdir")
+
+    context = {
+        "form": form,
+    }
     return render(request, "booking.html", context)
 
 
