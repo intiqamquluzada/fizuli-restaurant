@@ -1,14 +1,19 @@
 from django.shortcuts import render
-from restaurant.models import AboutModel, Personal, Service, Menu, Contact
+from restaurant.models import AboutModel, Personal, Service, Menu, Contact, HomeHeader
 from restaurant.forms import ContactForm, ReserveForm
 from django.contrib import messages
 
 def home_view(request):
     about = AboutModel.objects.first()
     workers = Personal.objects.order_by("-created_at")[:4]
+    home_header = HomeHeader.objects.first()
+
+
+
     context = {
         "index_about": about,
         "index_workers": workers,
+        "home_header": home_header,
     }
     return render(request, "index.html", context)
 

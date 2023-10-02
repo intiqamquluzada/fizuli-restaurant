@@ -160,3 +160,50 @@ class Reserve(DateMixin, SlugMixin):
         if not self.slug:
             self.slug = Generator.create_slug_shortcode(size=15, model_=Reserve)
         super(Reserve, self).save(*args, **kwargs)
+
+
+class HomeHeader(DateMixin, SlugMixin):
+    main_text = models.TextField(verbose_name="Əsas cümlə")
+    sub_text = models.TextField(verbose_name="Alt mətin")
+    back_image = models.ImageField(upload_to=Uploader.upload_photo_for_home_header, verbose_name="Arxa plan foto", help_text="1366x768")
+    round_image = models.ImageField(upload_to=Uploader.upload_photo_for_home_header, verbose_name="Fırlanan foto", help_text="612x612")
+
+
+    def __str__(self):
+        return self.main_text
+
+    class Meta:
+        ordering = ("-created_at", )
+        verbose_name = "Ana səhifə başlıq"
+        verbose_name_plural = "Ana səhifə başlıq"
+
+
+    def save(self, *args, **kwargs):
+        if not self.id and HomeHeader.objects.exists():
+            myobj = HomeHeader.objects.first()
+            myobj.main_text = self.main_text
+            myobj.sub_text = self.sub_text
+            myobj.back_image = self.back_image
+            myobj.round_image = self.round_image
+            myobj.save()
+        else:
+            if not self.slug:
+                self.slug = Generator.create_slug_shortcode(size=15, model_=HomeHeader)
+            super(HomeHeader, self).save(*args, **kwargs)
+
+
+class Subscribe(DateMixin, SlugMixin):
+    phone_number = models.CharField(max_length=255, verbose_name="Əlaqə nömrəsi", null=True, blank=True)
+
+    def __str__(self):
+        return self.phone_number
+
+    class Meta:
+        ordering = ("-created_at", )
+        verbose_name = "Abunə olan şəxs"
+        verbose_name_plural = "Abunə olan şəxslər"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = Generator.create_slug_shortcode(size=15, model_=Subscribe)
+        super(Subscribe, self).save(*args, **kwargs)
