@@ -49,7 +49,7 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="{% url 'home' %}" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1>
+                    <h1 class="text-primary m-0"><img src="{{details.logo.url}}" alt=""></h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -87,35 +87,56 @@
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Reservation</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Links</h4>
+                        <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                        <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                        <a class="btn btn-link" href="{% url 'booking' %}">Reservation</a>
+                        <a class="btn btn-link" href="{% url 'menu' %}">Menu</a>
+                        <a class="btn btn-link" href="{% url 'team' %}">Our Team</a>
+
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{details.location}}</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{details.phone_number}}</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{details.email}}</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                           {% for s in socials %}
+                            {% if s.social_media == 'twitter' %}
+                            <a class="btn btn-outline-light btn-social" href="https://{{s.link}}"><i class="fab fa-twitter"></i></a>
+                            {% endif %}
+                            {% if s.social_media == 'wp' %}
+                            <a class="btn btn-outline-light btn-social" href="https://wa.me/{{s.link}}"><i class="fab fa-whatsapp"></i></a>
+                            {% endif %}
+                            {% if s.social_media == 'insta' %}
+                            <a class="btn btn-outline-light btn-social" href="https://{{s.link}}"><i class="fab fa-instagram"></i></a>
+                            {% endif %}
+                            {% if s.social_media == 'telegram' %}
+                            <a class="btn btn-outline-light btn-social" href="https://t.me/{{s.link}}"><i class="fab fa-telegram"></i></a>
+                            {% endif %}
+                            {% if s.social_media == 'fb' %}
+                            <a class="btn btn-outline-light btn-social" href="https://{{s.link}}"><i class="fab fa-facebook-f"></i></a>
+                            {% endif %}
+                            {% if s.social_media == 'yt' %}
+                            <a class="btn btn-outline-light btn-social" href="https://{{s.link}}"><i class="fab fa-youtube"></i></a>
+                            {% endif %}
+                            {% if s.social_media == 'linkedin' %}
+                            <a class="btn btn-outline-light btn-social" href="https://{{s.link}}"><i class="fab fa-linkedin-in"></i></a>
+                            {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
-                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
-                        <p>09AM - 09PM</p>
-                        <h5 class="text-light fw-normal">Sunday</h5>
-                        <p>10AM - 08PM</p>
+
+                        <h5 class="text-light fw-normal">Iş günləri</h5>
+                        <p>{{details.working_time}}</p>
+
+
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
-                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <p>Subscribe</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
 
                             <form method="post">
@@ -127,26 +148,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
 
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- Footer End -->
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from restaurant.models import (AboutModel, Personal, Service, Category,
-                               Menu, Contact, Reserve, HomeHeader, Subscribe)
+                               Menu, Contact, Reserve, HomeHeader, Subscribe, MainDetails, SocialMedia)
 
 
 class ServiceAdmin(admin.ModelAdmin):
@@ -19,3 +19,5 @@ admin.site.register(Contact)
 admin.site.register(Reserve)
 admin.site.register(HomeHeader)
 admin.site.register(Subscribe)
+admin.site.register(MainDetails)
+admin.site.register(SocialMedia)

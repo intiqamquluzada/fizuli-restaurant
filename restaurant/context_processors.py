@@ -1,10 +1,13 @@
 from restaurant.models import Subscribe
-
+from restaurant.models import MainDetails, SocialMedia
 
 def total_view(request):
     myvalue = request.POST.get("subscribe")
-    print(myvalue)
     if myvalue:
         obj = Subscribe(phone_number=myvalue)
         obj.save()
-    return None
+
+    details = MainDetails.objects.first()
+    socials = SocialMedia.objects.all()
+
+    return {"details": details, "socials": socials}
