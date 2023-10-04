@@ -1,19 +1,29 @@
 from django.shortcuts import render
-from restaurant.models import AboutModel, Personal, Service, Menu, Contact, HomeHeader
+from django.http import JsonResponse
+
+from restaurant.models import AboutModel, Personal, Service, Menu, Contact, HomeHeader, Category
 from restaurant.forms import ContactForm, ReserveForm
 from django.contrib import messages
+import json
 
 def home_view(request):
     about = AboutModel.objects.first()
     workers = Personal.objects.order_by("-created_at")[:4]
     home_header = HomeHeader.objects.first()
-
-
+    categories = Category.objects.order_by("name")
+    menu_1 = Menu.objects.all()
+    cat = request.POST.get("cat_id")
+    if cat == '1':
+        menu_1 = Menu.objects.filter(category__id=cat)
+        print(menu_1)
+    
 
     context = {
         "index_about": about,
         "index_workers": workers,
         "home_header": home_header,
+        "categories": categories,
+        "menu_1": menu_1,
     }
     return render(request, "index.html", context)
 

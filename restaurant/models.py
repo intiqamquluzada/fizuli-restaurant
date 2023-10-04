@@ -84,6 +84,7 @@ class Service(DateMixin, SlugMixin):
 
 class Category(DateMixin, SlugMixin):
     name = models.CharField(max_length=255, verbose_name="Kateqoriyalar")
+    icon_link = models.TextField(verbose_name="Ikon", null=True, blank=True)
 
     def __str__(self):
         return self.name

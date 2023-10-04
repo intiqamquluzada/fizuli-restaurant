@@ -1,5 +1,5 @@
 from django.contrib import admin
-from restaurant.models import (AboutModel, Personal, Service, Category,
+from restaurant.models import (AboutModel, Personal, Service, Category, 
                                Menu, Contact, Reserve, HomeHeader, Subscribe, MainDetails, SocialMedia)
 
 
