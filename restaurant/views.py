@@ -6,6 +6,7 @@ from restaurant.forms import ContactForm, ReserveForm
 from django.contrib import messages
 import json
 
+
 def home_view(request):
     about = AboutModel.objects.first()
     workers = Personal.objects.order_by("-created_at")[:4]
