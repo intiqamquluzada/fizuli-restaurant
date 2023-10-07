@@ -1,11 +1,15 @@
 {% load static %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+    <title>Restaurant</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -71,8 +75,18 @@
                             </div>
                         </div>
                         <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}  active {% endif %}">Contact</a>
-                    </div>
-                    <a href="{% url 'booking' %}" class="btn btn-primary py-2 px-4">Book A Table</a>
+                    </div><ul>
+                     <li class="dropdown lang"><a href="{% url 'set_lang' LANGUAGE_CODE %}">{{ LANGUAGE_CODE }}</a>
+                                            <ul>
+                                                {% for i in LANGUAGES %}
+                                    {% if LANGUAGE_CODE != i.0 %}
+                                        <li><a href="{% url 'set_lang' i.0 %}">{{ i.0|upper }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                            </ul>
+                                        </li>
+                    </ul>
                 </div>
             </nav>
 

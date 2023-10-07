@@ -84,7 +84,8 @@ class Service(DateMixin, SlugMixin):
 
 class Category(DateMixin, SlugMixin):
     name = models.CharField(max_length=255, verbose_name="Kateqoriyalar")
-    icon_link = models.TextField(verbose_name="Ikon", null=True, blank=True)
+    image = models.ImageField(upload_to=Uploader.upload_photo_for_icon, null=True, blank=True, verbose_name="Kateqoriya fotosu", help_text="286x286")
+
 
     def __str__(self):
         return self.name

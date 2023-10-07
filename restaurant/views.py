@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from restaurant.models import AboutModel, Personal, Service, Menu, Contact, HomeHeader, Category
 from restaurant.forms import ContactForm, ReserveForm
 from django.contrib import messages
@@ -43,9 +43,27 @@ def service_view(request):
 
 
 def menu_view(request):
-    foods = Menu.objects.order_by("-created_at").filter(category__name='Popular Breakfast')
+    foods = Menu.objects.order_by("-created_at")
+    categories = Category.objects.order_by("name")
+    cat_name = request.GET.get("category")
+
+    if cat_name:
+        foods = foods.filter(category__name=cat_name)
+
+    paginator = Paginator(foods, 1)
+    page = request.GET.get('page', 1)
+    p = paginator.get_page(page)
+    try:
+        p = paginator.page(page)
+    except PageNotAnInteger:
+        p = paginator.page(1)
+    except EmptyPage:
+        p = paginator.page(paginator.num_pages)
     context = {
         "foods": foods,
+        "categories": categories,
+        "p": p,
+        "category": cat_name,
     }
     return render(request, "menu.html", context)
 
