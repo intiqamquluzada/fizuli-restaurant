@@ -75,18 +75,19 @@
                             </div>
                         </div>
                         <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}  active {% endif %}">Contact</a>
-                    </div><ul>
-                     <li class="dropdown lang"><a href="{% url 'set_lang' LANGUAGE_CODE %}">{{ LANGUAGE_CODE }}</a>
-                                            <ul>
-                                                {% for i in LANGUAGES %}
-                                    {% if LANGUAGE_CODE != i.0 %}
-                                        <li><a href="{% url 'set_lang' i.0 %}">{{ i.0|upper }}</a></li>
-                                    {% endif %}
-                                {% endfor %}
+                    </div>
 
-                                            </ul>
-                                        </li>
-                    </ul>
+                   <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{LANGUAGE_CODE|upper}}</a>
+                            <div class="dropdown-menu m-0">
+                                {% for i in LANGUAGES %}
+                                    {% if LANGUAGE_CODE != i.0 %}
+                                <a href="{% url 'set_lang' i.0 %}" class="dropdown-item">{{ i.0|upper }}</a>
+
+                           {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
                 </div>
             </nav>
 

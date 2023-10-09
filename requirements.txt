@@ -1,8 +1,15 @@
 asgiref==3.7.2
+certifi==2023.7.22
+charset-normalizer==3.3.0
 Django==4.2.5
 django-ckeditor==6.7.0
 django-js-asset==2.1.0
 django-modeltranslation==0.18.11
+django-rosetta==0.9.9
+idna==3.4
 Pillow==10.0.1
+polib==1.2.0
+requests==2.31.0
 sqlparse==0.4.4
 typing_extensions==4.8.0
+urllib3==2.0.6

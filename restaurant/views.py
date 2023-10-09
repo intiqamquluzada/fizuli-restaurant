@@ -1,10 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from restaurant.models import AboutModel, Personal, Service, Menu, Contact, HomeHeader, Category
 from restaurant.forms import ContactForm, ReserveForm
 from django.contrib import messages
+from django.urls import reverse, translate_url
+from django.conf import settings
 import json
+
+
+
+def set_language(request, lang_code):
+    referer = request.META.get("HTTP_REFERER")
+
+    if referer:
+        response = redirect(translate_url(referer, lang_code))
+    else:
+        response = redirect(reverse('home'))
+
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
+    return response
+
 
 
 def home_view(request):
