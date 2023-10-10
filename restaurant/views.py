@@ -10,6 +10,7 @@ import json
 
 
 
+
 def set_language(request, lang_code):
     referer = request.META.get("HTTP_REFERER")
 
