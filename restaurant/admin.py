@@ -41,14 +41,71 @@ class CategoryAdmin(TranslationAdmin):
         }
 
 
-admin.site.register(AboutModel)
+
+@admin.register(MainDetails)
+class MainDetailsAdmin(TranslationAdmin):
+    class Media:
+        js = (
+
+            'modeltranslation/js/tabbed_translation_fields.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+        )
+
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+
+
+@admin.register(HomeHeader)
+class HomeHeaderAdmin(TranslationAdmin):
+    class Media:
+        js = (
+
+            'modeltranslation/js/tabbed_translation_fields.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+        )
+
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+
+@admin.register(AboutModel)
+class AboutAdmin(TranslationAdmin):
+    class Media:
+        js = (
+
+            'modeltranslation/js/tabbed_translation_fields.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+        )
+
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+
+@admin.register(Menu)
+class MenuAdmin(TranslationAdmin):
+    class Media:
+        js = (
+
+            'modeltranslation/js/tabbed_translation_fields.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+        )
+
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+
+
 admin.site.register(Personal)
-
-
-admin.site.register(Menu)
 admin.site.register(Contact)
 admin.site.register(Reserve)
-admin.site.register(HomeHeader)
 admin.site.register(Subscribe)
-admin.site.register(MainDetails)
 admin.site.register(SocialMedia)

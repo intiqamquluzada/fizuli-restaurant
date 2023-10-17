@@ -67,7 +67,7 @@ def menu_view(request):
     if cat_name:
         foods = foods.filter(category__name=cat_name)
 
-    paginator = Paginator(foods, 1)
+    paginator = Paginator(foods, 4)
     page = request.GET.get('page', 1)
     p = paginator.get_page(page)
     try:

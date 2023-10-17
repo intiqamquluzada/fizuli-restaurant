@@ -8,6 +8,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", include("restaurant.urls")),
     path('rosetta/', include('rosetta.urls')),
     path('set_language/<str:lang_code>/', set_language, name="set_lang"),
     path('i18n/', include('django.conf.urls.i18n')),
@@ -17,8 +18,9 @@ urlpatterns = [
 from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
-    path("", include("restaurant.urls")),
-    *i18n_patterns(*urlpatterns, prefix_default_language=True),
+
+    *i18n_patterns(*urlpatterns, prefix_default_language=False),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
