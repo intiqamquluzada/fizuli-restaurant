@@ -335,6 +335,11 @@
     padding: 0px;
 }
 
+.headS {
+    margin-left:none!important;
+    margin-right:none!important;
+}
+
 #videoModal .close {
     position: absolute;
     width: 30px;
