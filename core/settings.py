@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 
-LANGUAGE_CODE = 'et'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Asia/Baku'
 

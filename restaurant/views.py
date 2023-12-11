@@ -25,6 +25,7 @@ def set_language(request, lang_code):
 
 
 def home_view(request):
+
     about = AboutModel.objects.first()
     workers = Personal.objects.order_by("-created_at")[:4]
     home_header = HomeHeader.objects.first()
@@ -47,7 +48,10 @@ def home_view(request):
 
 
 def about_view(request):
-    context = {}
+    about = AboutModel.objects.last()
+    context = {
+        "about": about,
+    }
     return render(request, "about.html", context)
 
 

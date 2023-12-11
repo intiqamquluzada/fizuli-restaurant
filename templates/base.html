@@ -70,7 +70,9 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{% url 'booking' %}" class="dropdown-item {% if request.path == '/booking/' %}  active {% endif %}">Booking</a>
-                                <a href="{% url 'team' %}" class="dropdown-item {% if request.path == '/our-team/' %}  active {% endif %}">Our Team</a>
+                                {% comment %}
+<!--                                <a href="{% url 'team' %}" class="dropdown-item {% if request.path == '/our-team/' %}  active {% endif %}">Our Team</a>-->
+                                {% endcomment %}
 <!--                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
                             </div>
                         </div>

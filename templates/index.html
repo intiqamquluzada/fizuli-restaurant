@@ -157,7 +157,7 @@
                 <div class="card">
                     <div class="card-img-container">
                         <a href="{% url 'menu' %}?category={{cat.name}}" class="hover-link">{{cat.name}}</a>
-                        <img class="card-img-top" src="{{cat.image.url}}" alt="Card image cap" style="height:286px;width:286px;">
+                        <img class="card-img-top" src="{{cat.image.url}}" alt="Card image cap" style="height:286px;width:100%;">
                     </div>
                     <div class="card-body">
                         <a href="{% url 'menu' %}?category={{cat.name}}" class="btn btn-warning">{{cat.name}}</a>
@@ -173,7 +173,7 @@
             <div class="row g-0">
                 <div class="col-md-6">
                     <div class="video">
-                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="{{details.video_url}}" data-bs-target="#videoModal">
                             <span></span>
                         </button>
                     </div>
@@ -238,7 +238,7 @@
                     <div class="modal-body">
                         <!-- 16:9 aspect ratio -->
                         <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                            <iframe class="embed-responsive-item" src="{{details.video_url}}" id="video" allowfullscreen
                                 allow="autoplay"></iframe>
                         </div>
                     </div>
