@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 
 {% block body %}
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Booking</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">{% trans 'Booking' %}</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Booking</li>
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">{% trans 'Booking' %}</li>
                         </ol>
                     </nav>
                 </div>
@@ -37,8 +40,8 @@
                 </div>
                 <div class="col-md-6 bg-dark d-flex align-items-center">
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservation</h5>
-                        <h1 class="text-white mb-4">Book A Table Online</h1>
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">{% trans 'Reservation' %}</h5>
+                        <h1 class="text-white mb-4">{% trans 'Book A Table Online' %}</h1>
                         <form method="POST">
                             {% csrf_token %}
                             <div class="row g-3">
@@ -73,7 +76,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Rezerv et</button>
+                                    <button class="btn btn-primary w-100 py-3" type="submit">{% trans 'Reserve' %}</button>
                                 </div>
                             </div>
                         </form>
@@ -86,7 +89,7 @@
             <div class="modal-dialog">
                 <div class="modal-content rounded-0">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">{% trans 'Youtube Video' %}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

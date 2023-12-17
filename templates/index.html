@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
 
 {% block body %}
 
@@ -9,7 +13,7 @@
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="display-3 text-white animated slideInLeft">{{home_header.main_text}}</h1>
                             <p class="text-white animated slideInLeft mb-4 pb-2">{{home_header.sub_text}}</p>
-                            <a href="{% url 'booking' %}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
+                            <a href="{% url 'booking' %}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">{% trans 'Book A Table' %}</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                             <img class="img-fluid" src="{{home_header.round_image.url}}" alt="">
@@ -29,8 +33,8 @@
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-                                <h5>Master Chefs</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <h5>{% trans 'Master Chefs' %}</h5>
+                                <p>{% trans 'We have experienced chefs.' %}</p>
                             </div>
                         </div>
                     </div>
@@ -38,8 +42,8 @@
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
-                                <h5>Quality Food</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <h5>{% trans 'Quality Food' %}</h5>
+                                <p>{% trans 'Our meals quality are the best.' %}</p>
                             </div>
                         </div>
                     </div>
@@ -47,8 +51,8 @@
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
-                                <h5>Online Order</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <h5>{% trans 'Online Order' %}</h5>
+                                <p>{% trans 'You can reserve and online order.' %}</p>
                             </div>
                         </div>
                     </div>
@@ -56,8 +60,8 @@
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-headset text-primary mb-4"></i>
-                                <h5>24/7 Service</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <h5>{% trans '24/7 Service' %}</h5>
+                                <p>{% trans 'We serve to you 7/24.' %}</p>
                             </div>
                         </div>
                     </div>
@@ -88,30 +92,11 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">{% trans 'About Us' %}</h5>
                         <h1 class="mb-4"><i>{{index_about.head}}</i></h1>
                         <p class="mb-4">{{index_about.description|safe}}</p>
-                        <div class="row g-4 mb-4">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{index_about.years_of_experience}}</h1>
-                                    <div class="ps-4">
-                                        <p class="mb-0">Years of</p>
-                                        <h6 class="text-uppercase mb-0">Experience</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{index_about.count_of_workers}}</h1>
-                                    <div class="ps-4">
-                                        <p class="mb-0">Popular</p>
-                                        <h6 class="text-uppercase mb-0">Master Chefs</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="">{% trans 'Read More' %}</a>
                     </div>
                 </div>
             </div>
@@ -147,8 +132,8 @@
      <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-            <h1 class="mb-5">Most Popular Items</h1>
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">{% trans 'Food Menu' %}</h5>
+            <h1 class="mb-5">{% trans 'Most Popular Items' %}</h1>
         </div>
 
         <div class="row">
@@ -169,70 +154,13 @@
     </div>
 </div>
 
-        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <div class="video">
-                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="{{details.video_url}}" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservation</h5>
-                        <h1 class="text-white mb-4">Book A Table Online</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="select1">
-                                          <option value="1">People 1</option>
-                                          <option value="2">People 2</option>
-                                          <option value="3">People 3</option>
-                                        </select>
-                                        <label for="select1">No Of People</label>
-                                      </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Special Request</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
         <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content rounded-0">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">{% trans 'Youtube Video' %}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

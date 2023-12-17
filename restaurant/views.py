@@ -55,12 +55,12 @@ def about_view(request):
     return render(request, "about.html", context)
 
 
-def service_view(request):
-    services = Service.objects.order_by("-created_at")
-    context = {
-        "services": services,
-    }
-    return render(request, "service.html", context)
+# def service_view(request):
+#     services = Service.objects.order_by("-created_at")
+#     context = {
+#         "services": services,
+#     }
+#     return render(request, "service.html", context)
 
 
 def menu_view(request):
@@ -71,7 +71,7 @@ def menu_view(request):
     if cat_name:
         foods = foods.filter(category__name=cat_name)
 
-    paginator = Paginator(foods, 4)
+    paginator = Paginator(foods, 6)
     page = request.GET.get('page', 1)
     p = paginator.get_page(page)
     try:

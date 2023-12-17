@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-09 21:39+0400\n"
+"POT-Creation-Date: 2023-12-17 17:23+0400\n"
 "PO-Revision-Date: 2023-10-09 21:25+0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,5 +25,166 @@ msgstr ""
 msgid "Meist"
 msgstr "О нас"
 
-#~ msgid "About Us"
-#~ msgstr "О нас"
+#: templates/about.html:14 templates/base.html:65 templates/booking.html:14
+#: templates/contact.html:15 templates/menu.html:13
+msgid "Home"
+msgstr ""
+
+#: templates/about.html:16 templates/base.html:66
+#, fuzzy
+#| msgid "About Us"
+msgid "About"
+msgstr "О нас"
+
+#: templates/about.html:46 templates/base.html:103 templates/index.html:95
+msgid "About Us"
+msgstr "О нас"
+
+#: templates/about.html:50 templates/index.html:99
+msgid "Read More"
+msgstr ""
+
+#: templates/base.html:46
+msgid "Loading..."
+msgstr ""
+
+#: templates/base.html:71 templates/base.html:106 templates/menu.html:14
+msgid "Menu"
+msgstr ""
+
+#: templates/base.html:72 templates/booking.html:11 templates/booking.html:15
+#: templates/contact.html:36
+msgid "Booking"
+msgstr ""
+
+#: templates/base.html:74 templates/contact.html:16
+msgid "Contact"
+msgstr ""
+
+#: templates/base.html:102
+msgid "Links"
+msgstr ""
+
+#: templates/base.html:104 templates/contact.html:12 templates/contact.html:29
+msgid "Contact Us"
+msgstr ""
+
+#: templates/base.html:105 templates/booking.html:43
+msgid "Reservation"
+msgstr ""
+
+#: templates/base.html:142
+msgid "Opening"
+msgstr ""
+
+#: templates/base.html:144
+msgid "Working hours"
+msgstr ""
+
+#: templates/base.html:150
+msgid "Newsletter"
+msgstr ""
+
+#: templates/base.html:151 templates/base.html:157
+msgid "Subscribe"
+msgstr ""
+
+#: templates/booking.html:44
+msgid "Book A Table Online"
+msgstr ""
+
+#: templates/booking.html:79
+msgid "Reserve"
+msgstr ""
+
+#: templates/booking.html:92 templates/index.html:163
+msgid "Youtube Video"
+msgstr ""
+
+#: templates/contact.html:30
+msgid "Contact For Any Query"
+msgstr ""
+
+#: templates/contact.html:40
+msgid "General"
+msgstr ""
+
+#: templates/contact.html:44
+msgid "Technical"
+msgstr ""
+
+#: templates/contact.html:63
+msgid "Your Name"
+msgstr ""
+
+#: templates/contact.html:69
+msgid "Your Email"
+msgstr ""
+
+#: templates/contact.html:75
+msgid "Subject"
+msgstr ""
+
+#: templates/contact.html:81
+msgid "Message"
+msgstr ""
+
+#: templates/contact.html:85
+msgid "Send Message"
+msgstr ""
+
+#: templates/index.html:16
+msgid "Book A Table"
+msgstr ""
+
+#: templates/index.html:36
+msgid "Master Chefs"
+msgstr ""
+
+#: templates/index.html:37
+msgid "We have experienced chefs."
+msgstr ""
+
+#: templates/index.html:45
+msgid "Quality Food"
+msgstr ""
+
+#: templates/index.html:46
+msgid "Our meals quality are the best."
+msgstr ""
+
+#: templates/index.html:54
+msgid "Online Order"
+msgstr ""
+
+#: templates/index.html:55
+msgid "You can reserve and online order."
+msgstr ""
+
+#: templates/index.html:63
+msgid "24/7 Service"
+msgstr ""
+
+#: templates/index.html:64
+msgid "We serve to you 7/24."
+msgstr ""
+
+#: templates/index.html:135 templates/menu.html:10 templates/menu.html:26
+msgid "Food Menu"
+msgstr ""
+
+#: templates/index.html:136 templates/menu.html:27
+msgid "Most Popular Items"
+msgstr ""
+
+#: templates/menu.html:35 templates/menu.html:36
+msgid "All categories"
+msgstr ""
+
+#: templates/menu.html:41
+msgid "Filter"
+msgstr ""
+
+#: templates/menu.html:45
+msgid "Search"
+msgstr ""

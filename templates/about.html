@@ -11,9 +11,9 @@
                     <h1 class="display-3 text-white mb-3 animated slideInDown">{% trans 'Meist' %}</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
 
-                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">{% trans 'About' %}</li>
                         </ol>
                     </nav>
                 </div>
@@ -43,31 +43,11 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">{% trans 'About Us' %}</h5>
                         <h1 class="mb-4">{{about.head}} <i class="fa fa-utensils text-primary me-2"></i></h1>
                         <p class="mb-4">{{about.description|safe}}</p>
 
-                        <div class="row g-4 mb-4">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{about.years_of_experience}}</h1>
-                                    <div class="ps-4">
-                                        <p class="mb-0">Years of</p>
-                                        <h6 class="text-uppercase mb-0">Experience</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{about.count_of_workers}}</h1>
-                                    <div class="ps-4">
-                                        <p class="mb-0">Popular</p>
-                                        <h6 class="text-uppercase mb-0">Master Chefs</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'about' %}">Read More</a>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'about' %}">{% trans 'Read More' %}</a>
                     </div>
                 </div>
             </div>

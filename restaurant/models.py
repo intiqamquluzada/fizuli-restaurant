@@ -218,6 +218,7 @@ class MainDetails(DateMixin, SlugMixin):
     working_time = models.TextField(verbose_name="İş vaxtları")
     logo = models.ImageField(upload_to=Uploader.upload_photo_for_logo, verbose_name="Saytın loqosu")
     video_url = models.TextField(verbose_name="Video linki", null=True, blank=True)
+    map_url = models.TextField(verbose_name="Xerite linki", null=True, blank=True)
 
     def __str__(self):
         return self.location
@@ -238,16 +239,23 @@ class MainDetails(DateMixin, SlugMixin):
             myobj.video_url = self.video_url
 
             extracted_url = extract_yt_video_url_from_iframe(self.video_url)
+            map_url = extract_yt_video_url_from_iframe(self.map_url)
             if extracted_url:
                 myobj.video_url = extracted_url
+            if map_url:
+                myobj.map_url = map_url
 
             myobj.save()
         else:
             if not self.slug:
                 self.slug = Generator.create_slug_shortcode(size=15, model_=MainDetails)
             extracted_url = extract_yt_video_url_from_iframe(self.video_url)
+            map_url = extract_yt_video_url_from_iframe(self.map_url)
+
             if extracted_url:
                 self.video_url = extracted_url
+            if map_url:
+                self.map_url = map_url
             super(MainDetails, self).save(*args, **kwargs)
 
 

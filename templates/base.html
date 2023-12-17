@@ -43,7 +43,7 @@
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+                <span class="sr-only">{% trans 'Loading...' %}</span>
             </div>
         </div>
         <!-- Spinner End -->
@@ -62,21 +62,15 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
 
-                        <a href="{% url 'home' %}" class="nav-item nav-link {% if request.path == '/' %}  active {% endif %}">Home</a>
-                        <a href="{% url 'about' %}" class="nav-item nav-link {% if request.path == '/about/' %}  active {% endif %}">About</a>
-                        <a href="{% url 'service' %}" class="nav-item nav-link {% if request.path == '/service/' %}  active {% endif %}">Service</a>
-                        <a href="{% url 'menu' %}" class="nav-item nav-link {% if request.path == '/menu/' %}  active {% endif %}">Menu</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="{% url 'booking' %}" class="dropdown-item {% if request.path == '/booking/' %}  active {% endif %}">Booking</a>
-                                {% comment %}
-<!--                                <a href="{% url 'team' %}" class="dropdown-item {% if request.path == '/our-team/' %}  active {% endif %}">Our Team</a>-->
-                                {% endcomment %}
-<!--                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
-                            </div>
-                        </div>
-                        <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}  active {% endif %}">Contact</a>
+                        <a href="{% url 'home' %}" class="nav-item nav-link {% if request.path == '/' %}  active {% endif %}">{% trans 'Home' %}</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link {% if request.path == '/about/' %}  active {% endif %}">{% trans 'About' %}</a>
+                        {% comment %}
+                        <a href="{% url 'service' %}" class="nav-item nav-link {% if request.path == '/service/' %}  active {% endif %}">{% trans 'Service' %}</a>
+                       {% endcomment %}
+                        <a href="{% url 'menu' %}" class="nav-item nav-link {% if request.path == '/menu/' %}  active {% endif %}">{% trans 'Menu' %}</a>
+                        <a href="{% url 'booking' %}" class="nav-item nav-link {% if request.path == '/booking/' %}  active {% endif %}">{% trans 'Booking' %}</a>
+
+                        <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}  active {% endif %}">{% trans 'Contact' %}</a>
                     </div>
 
                    <div class="nav-item dropdown">
@@ -104,12 +98,12 @@
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Links</h4>
-                        <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
-                        <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
-                        <a class="btn btn-link" href="{% url 'booking' %}">Reservation</a>
-                        <a class="btn btn-link" href="{% url 'menu' %}">Menu</a>
-                        <a class="btn btn-link" href="{% url 'team' %}">Our Team</a>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{% trans 'Links' %}</h4>
+                        <a class="btn btn-link" href="{% url 'about' %}">{% trans 'About Us' %}</a>
+                        <a class="btn btn-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+                        <a class="btn btn-link" href="{% url 'booking' %}">{% trans 'Reservation' %}</a>
+                        <a class="btn btn-link" href="{% url 'menu' %}">{% trans 'Menu' %}</a>
+
 
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -144,22 +138,22 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{% trans 'Opening' %}</h4>
 
-                        <h5 class="text-light fw-normal">Iş günləri</h5>
+                        <h5 class="text-light fw-normal">{% trans 'Working hours' %}</h5>
                         <p>{{details.working_time}}</p>
 
 
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
-                        <p>Subscribe</p>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{% trans 'Newsletter' %}</h4>
+                        <p>{% trans 'Subscribe' %}</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
 
                             <form method="post">
                                 {% csrf_token %}
                             <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Phone number" name="subscribe">
-                            <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Abunə ol</button>
+                            <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">{% trans 'Subscribe' %}</button>
                        </form>
                         </div>
                     </div>

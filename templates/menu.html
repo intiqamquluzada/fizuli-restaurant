@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 
 {% block body %}
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Food Menu</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">{% trans 'Food Menu' %}</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Menu</li>
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">{% trans 'Menu' %}</li>
                         </ol>
                     </nav>
                 </div>
@@ -20,8 +23,8 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                    <h1 class="mb-5">Most Popular Items</h1>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">{% trans 'Food Menu' %}</h5>
+                    <h1 class="mb-5">{% trans 'Most Popular Items' %}</h1>
         <div class="container">
               <div class="row" style="margin-bottom: 30px;" >
                   <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
@@ -29,17 +32,17 @@
                          {% csrf_token %}
   <div class="form-group d-flex justify-content-between" style="margin-bottom: 1rem;">
     <select class="form-control" id="category" name="category" style="height: calc(3.25rem + 2px)">
-      <option value="" class="dropdown-toggle" style="display: none;">Bütün kateqoriyalar 	&#128315;</option>
-        <option value="" class="dropdown-toggle">Bütün kateqoriyalar</option>
+      <option value="" class="dropdown-toggle" style="display: none;">{% trans 'All categories' %} 	&#128315;</option>
+        <option value="" class="dropdown-toggle">{% trans 'All categories' %}</option>
       {% for cat in categories %}
         <option value="{{ cat.name }}">{{ cat.name }}</option>
       {% endfor %}
     </select>
-  <button type="submit" class="btn btn-warning" style="margin-left: 1rem;">Filter</button>
+  <button type="submit" class="btn btn-warning" style="margin-left: 1rem;">{% trans 'Filter' %}</button>
 
   </div>
   {% if cat %}
-      <span class="btn btn-link" style="width: 50px; padding-top: 15px;"><strong style="color: red;">Axtarış </strong>: {{cat}} </span>
+      <span class="btn btn-link" style="width: 50px; padding-top: 15px;"><strong style="color: red;">{% trans 'Search' %} </strong>: {{cat}} </span>
       {% endif %}
 </form>
 
