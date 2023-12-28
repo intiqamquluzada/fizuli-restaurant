@@ -6,7 +6,7 @@ from restaurant.forms import ContactForm, ReserveForm
 from django.contrib import messages
 from django.urls import reverse, translate_url
 from django.conf import settings
-import json
+from django.core.mail import send_mail
 
 
 
@@ -111,6 +111,7 @@ def booking_view(request):
     if request.method == "POST":
         form = ReserveForm(request.POST or None)
         if form.is_valid():
+            # send_mail
             form.save()
             messages.success(request,"Məlumatlar göndərildi")
             form = ReserveForm()
