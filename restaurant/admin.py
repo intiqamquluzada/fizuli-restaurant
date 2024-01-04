@@ -1,7 +1,9 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from restaurant.models import (AboutModel, Personal, Service, Category, 
-                               Menu, Contact, Reserve, HomeHeader, Subscribe, MainDetails, SocialMedia)
+                               Menu, Contact, Reserve, HomeHeader,
+                               Subscribe, MainDetails, SocialMedia,
+                               CateringMenu, CateringMenuCategories)
 
 @admin.register(Service)
 class ServiceAdmin(TranslationAdmin):
@@ -102,6 +104,34 @@ class MenuAdmin(TranslationAdmin):
             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
         }
 
+
+@admin.register(CateringMenuCategories)
+class CateringMenuCategoriesAdmin(TranslationAdmin):
+    class Media:
+        js = (
+
+            'modeltranslation/js/tabbed_translation_fields.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+        )
+
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+@admin.register(CateringMenu)
+class CateringMenuAdmin(TranslationAdmin):
+    class Media:
+        js = (
+
+            'modeltranslation/js/tabbed_translation_fields.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+        )
+
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
 
 
 admin.site.register(Personal)

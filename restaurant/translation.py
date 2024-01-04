@@ -1,5 +1,7 @@
 from modeltranslation.translator import TranslationOptions, register
-from restaurant.models import AboutModel,Personal, Service, Category, Menu, HomeHeader, MainDetails
+from restaurant.models import (AboutModel,Personal, Service,
+                               Category, Menu, HomeHeader,
+                               MainDetails, CateringMenu, CateringMenuCategories)
 
 @register(AboutModel)
 class AboutModelTranslationOptions(TranslationOptions):
@@ -28,3 +30,11 @@ class HomeHeaderTranslationOptions(TranslationOptions):
 @register(MainDetails)
 class MainDetailsTranslationOptions(TranslationOptions):
     fields = ("location", "working_time", )
+
+@register(CateringMenuCategories)
+class CateringMenuCategoriesTranslationOptions(TranslationOptions):
+    fields = ("name", )
+
+@register(CateringMenu)
+class CateringMenuTranslationOptions(TranslationOptions):
+    fields = ("name", "ingredients")

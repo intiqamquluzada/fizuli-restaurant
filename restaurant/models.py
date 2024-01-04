@@ -279,3 +279,35 @@ class SocialMedia(DateMixin, SlugMixin):
             self.slug = Generator.create_slug_shortcode(size=15, model_=SocialMedia)
 
         super(SocialMedia, self).save(*args, **kwargs)
+
+
+class CateringMenuCategories(DateMixin):
+    name = models.CharField(max_length=255,
+                            verbose_name='Kateqoriya')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ("-created_at", )
+        verbose_name = 'Catering Menyu kateqoriya'
+        verbose_name_plural = 'Catering Menyu kateqoriyaları'
+
+
+
+class CateringMenu(DateMixin):
+    category = models.ForeignKey(CateringMenuCategories, on_delete=models.SET_NULL,
+                                 null=True, blank=True)
+    name = models.CharField(max_length=255, verbose_name='Yemək adı')
+    ingredients = models.TextField(verbose_name='Tərkibi')
+    price = models.FloatField(verbose_name='Qiymət')
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ("-created_at", )
+        verbose_name = 'Catering menu'
+        verbose_name_plural = 'Catering menu'
+

@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from restaurant.models import AboutModel, Personal, Service, Menu, Contact, HomeHeader, Category
+from restaurant.models import (AboutModel, Personal,
+                               Service, Menu, Contact, HomeHeader,
+                               Category, CateringMenuCategories,
+                               CateringMenu)
 from restaurant.forms import ContactForm, ReserveForm
 from django.contrib import messages
 from django.urls import reverse, translate_url
@@ -128,3 +131,13 @@ def booking_view(request):
 def our_team(request):
     context = {}
     return render(request, "team.html", context)
+
+
+def catering_menu(request):
+    meals = CateringMenu.objects.order_by("-created_at")
+    categories = CateringMenuCategories.objects.order_by("-created_at")
+    context = {
+        "meals":  meals,
+        "categories": categories,
+    }
+    return render(request, "cateringmenu.html", context)

@@ -17,6 +17,13 @@
     <!-- Favicon -->
     <link href="{{details.logo.url}}" rel="icon">
 
+    <!-- Catering files -->
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
+    <script src="https://unpkg.com/scrollreveal@4.0.0-beta.6"></script>
+    <!-- Catering files -->
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +75,7 @@
                         <a href="{% url 'service' %}" class="nav-item nav-link {% if request.path == '/service/' %}  active {% endif %}">{% trans 'Service' %}</a>
                        {% endcomment %}
                         <a href="{% url 'menu' %}" class="nav-item nav-link {% if request.path == '/menu/' %}  active {% endif %}">{% trans 'Menu' %}</a>
+                        <a href="{% url 'catering' %}" class="nav-item nav-link {% if request.path == '/catering/menu/' %}  active {% endif %}">{% trans 'Catering Menu' %}</a>
                         <a href="{% url 'booking' %}" class="nav-item nav-link {% if request.path == '/booking/' %}  active {% endif %}">{% trans 'Booking' %}</a>
 
                         <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}  active {% endif %}">{% trans 'Contact' %}</a>
@@ -182,6 +190,30 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.2/what-input.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+    <script type="text/javascript">
+        $('.slider').slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 3500,
+            arrows: false,
+            fade: true,
+            cssEase: 'linear'
+        });
+
+    </script>
+
+    <script>
+        $(window).on('load', function() {
+            $("#preloader").fadeOut();
+        });
+    </script>
 </body>
 
 </html>
