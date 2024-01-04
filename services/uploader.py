@@ -9,6 +9,10 @@ class Uploader:
         return f"personal/{instance.slug}/{filename}"
 
     @staticmethod
+    def upload_photo_for_catering(instance, filename):
+        return f"catering/{filename}"
+
+    @staticmethod
     def upload_photo_for_icon(instance, filename):
         return f"icon/{instance.slug}/{filename}"
 

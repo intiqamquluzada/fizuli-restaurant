@@ -4,9 +4,10 @@
 
 {% block body %}
 
-<section id="main-menu" class="menu-cart scroll-reveal" style="background: teal;">
+<section id="main-menu" class="menu-cart scroll-reveal" style="background: #0F172B;">
     <div class="container">
-        <h1 class="header-txt">Fizuli Catering Menu</h1>
+        <h1 class="header-txt" style="color: whitesmoke;">Fizuli Catering Menu</h1>
+        <p class="header-txt" style="color: orange;">{{details.catering_menu_text}}</p>
         <div class="divider">
                 <?xml version="1.0" encoding="utf-8"?>
                 <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -34,13 +35,14 @@
                     </li>
                 {% else %}
                     <li class="tabs-title">
-                        <a class="m-anim" data-tabs-target="panel{{category.id}}" href="#panel{{category.id}}" data-text="{{category.name}}">
+                        <a class="m-anim" data-tabs-target="panel{{category.id}}" href="#panel{{category.id}}" data-text="{{category.name}}" >
                             {{category.name}}
                         </a>
                     </li>
                 {% endif %}
             {% endfor %}
         </ul>
+
 
         <div class="tabs-content" data-tabs-content="example-tabs">
             {% for category in categories %}
@@ -50,7 +52,8 @@
                             <div class="menu-section">
                                 <table>
                                     <tr>
-                                        <td><span>{{ meal.name }}</span></td>
+
+                                        <td><span><img class="flex-shrink-0 img-fluid rounded" src="{{meal.image.url}}" alt="" style="width: 50px;height: 30px;">{{ meal.name }}</span></td>
                                         <td><span>${{ meal.price }}</span></td>
                                     </tr>
                                     <tr>

@@ -212,6 +212,7 @@ class Subscribe(DateMixin, SlugMixin):
 
 
 class MainDetails(DateMixin, SlugMixin):
+    catering_menu_text = models.TextField(null=True, blank=True)
     location = models.TextField(verbose_name="Ünvan")
     phone_number = models.TextField(verbose_name="Əlaqə nömrəsi")
     email = models.EmailField(verbose_name="E-mail")
@@ -298,6 +299,7 @@ class CateringMenuCategories(DateMixin):
 class CateringMenu(DateMixin):
     category = models.ForeignKey(CateringMenuCategories, on_delete=models.SET_NULL,
                                  null=True, blank=True)
+    image = models.ImageField(upload_to=Uploader.upload_photo_for_catering, null=True, blank=True)
     name = models.CharField(max_length=255, verbose_name='Yemək adı')
     ingredients = models.TextField(verbose_name='Tərkibi')
     price = models.FloatField(verbose_name='Qiymət')

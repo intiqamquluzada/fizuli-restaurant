@@ -29,7 +29,7 @@ class HomeHeaderTranslationOptions(TranslationOptions):
 
 @register(MainDetails)
 class MainDetailsTranslationOptions(TranslationOptions):
-    fields = ("location", "working_time", )
+    fields = ("location", "working_time", "catering_menu_text", )
 
 @register(CateringMenuCategories)
 class CateringMenuCategoriesTranslationOptions(TranslationOptions):
