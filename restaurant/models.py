@@ -216,7 +216,7 @@ class MainDetails(DateMixin, SlugMixin):
     location = models.TextField(verbose_name="Ünvan")
     phone_number = models.TextField(verbose_name="Əlaqə nömrəsi")
     email = models.EmailField(verbose_name="E-mail")
-    working_time = models.TextField(verbose_name="İş vaxtları")
+    working_time = RichTextField(verbose_name="İş vaxtları")
     logo = models.ImageField(upload_to=Uploader.upload_photo_for_logo, verbose_name="Saytın loqosu")
     video_url = models.TextField(verbose_name="Video linki", null=True, blank=True)
     map_url = models.TextField(verbose_name="Xerite linki", null=True, blank=True)
