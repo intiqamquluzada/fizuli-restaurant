@@ -136,8 +136,19 @@ def our_team(request):
 def catering_menu(request):
     meals = CateringMenu.objects.order_by("-created_at")
     categories = CateringMenuCategories.objects.order_by("-created_at")
+
+    paginator = Paginator(meals, 1)
+    page = request.GET.get('page', 1)
+    p = paginator.get_page(page)
+    try:
+        p = paginator.page(page)
+    except PageNotAnInteger:
+        p = paginator.page(1)
+    except EmptyPage:
+        p = paginator.page(paginator.num_pages)
     context = {
         "meals":  meals,
         "categories": categories,
+        "p": p,
     }
     return render(request, "cateringmenu.html", context)
