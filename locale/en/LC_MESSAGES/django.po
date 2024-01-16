@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-17 17:23+0400\n"
+"POT-Creation-Date: 2024-01-16 22:52+0400\n"
 "PO-Revision-Date: 2023-10-09 21:25+0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,18 +23,18 @@ msgstr ""
 msgid "Meist"
 msgstr "About us"
 
-#: templates/about.html:14 templates/base.html:65 templates/booking.html:14
+#: templates/about.html:14 templates/base.html:72 templates/booking.html:14
 #: templates/contact.html:15 templates/menu.html:13
 msgid "Home"
 msgstr ""
 
-#: templates/about.html:16 templates/base.html:66
+#: templates/about.html:16 templates/base.html:73
 #, fuzzy
 #| msgid "About Us"
 msgid "About"
 msgstr "About us"
 
-#: templates/about.html:46 templates/base.html:103 templates/index.html:95
+#: templates/about.html:46 templates/base.html:111 templates/index.html:95
 msgid "About Us"
 msgstr "About us"
 
@@ -42,49 +42,45 @@ msgstr "About us"
 msgid "Read More"
 msgstr ""
 
-#: templates/base.html:46
+#: templates/base.html:53
 msgid "Loading..."
 msgstr ""
 
-#: templates/base.html:71 templates/base.html:106 templates/menu.html:14
+#: templates/base.html:78 templates/base.html:114 templates/menu.html:14
 msgid "Menu"
 msgstr ""
 
-#: templates/base.html:72 templates/booking.html:11 templates/booking.html:15
+#: templates/base.html:79
+msgid "Catering Menu"
+msgstr ""
+
+#: templates/base.html:80 templates/booking.html:11 templates/booking.html:15
 #: templates/contact.html:36
 msgid "Booking"
 msgstr ""
 
-#: templates/base.html:74 templates/contact.html:16
+#: templates/base.html:82 templates/contact.html:16
 msgid "Contact"
 msgstr ""
 
-#: templates/base.html:102
+#: templates/base.html:110
 msgid "Links"
 msgstr ""
 
-#: templates/base.html:104 templates/contact.html:12 templates/contact.html:29
+#: templates/base.html:112 templates/contact.html:12 templates/contact.html:29
 msgid "Contact Us"
 msgstr ""
 
-#: templates/base.html:105 templates/booking.html:43
+#: templates/base.html:113 templates/booking.html:43
 msgid "Reservation"
 msgstr ""
 
-#: templates/base.html:142
+#: templates/base.html:150
 msgid "Opening"
 msgstr ""
 
-#: templates/base.html:144
+#: templates/base.html:152
 msgid "Working hours"
-msgstr ""
-
-#: templates/base.html:150
-msgid "Newsletter"
-msgstr ""
-
-#: templates/base.html:151 templates/base.html:157
-msgid "Subscribe"
 msgstr ""
 
 #: templates/booking.html:44
@@ -97,6 +93,10 @@ msgstr ""
 
 #: templates/booking.html:92 templates/index.html:163
 msgid "Youtube Video"
+msgstr ""
+
+#: templates/cateringmenu.html:9
+msgid "Fizuli Catering Menu"
 msgstr ""
 
 #: templates/contact.html:30
