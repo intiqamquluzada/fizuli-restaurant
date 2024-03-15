@@ -7,7 +7,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('akm1n/', admin.site.urls),
     path("", include("restaurant.urls")),
     path('rosetta/', include('rosetta.urls')),
     path('set_language/<str:lang_code>/', set_language, name="set_lang"),

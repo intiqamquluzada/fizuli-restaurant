@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
+{% block body %}
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">{% trans 'Food Menu' %}</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">{% trans 'Menu' %}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Menu Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">{% trans 'Food Menu' %}</h5>
+                    <h1 class="mb-5"> </h1>
+        <div class="container">
+              <div class="row" style="margin-bottom: 30px;" >
+
+
+                <div class="row">
+{% for f in p %}
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-img-container">
+
+
+                        <img class="card-img-top" src="{{f.image.url}}" alt="Card image cap" style="width:300px;height:219px;">
+                    </div>
+                    <div class="card-body">
+                        <a href="" class="section-title ff-secondary text-center text-primary fw-normal">{{f.food_name}}</a>
+                        <hr>
+                        <p style="color:skyblue;" class="section-title ff-secondary " >{{f.receipt}}</p> <br>
+                        <p style="color:red;" class="section-title ff-secondary text-center text-danger fw-normal">{{f.category.name}}</p>
+                        <p style="color:green;" class="ff-secondary">{{f.price}}</p>
+                    </div>
+                </div>
+            </div>
+         {% endfor %}
+        </div>
+            </div>
+        </div>
+        <!-- Menu End -->
+<div class="pagination-container">
+    <nav aria-label="Page navigation example" class="paginationNav mx-auto ml-6">
+        <ul class="pagination">
+            {% if p.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?{% if category %}category={{category}}&{% endif %}page={{p.number|add:'-1'}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+            {% endif %}
+            {% if p.number > 1 %}
+                <li class="page-item"><a class="page-link" href="?{% if category %}category={{category}}&{% endif %}page={{p.number|add:'-1'}}">{{p.number|add:"-1"}}</a></li>
+            {% endif %}
+            <li class="page-item"><a class="page-link active" href="?{% if category %}category={{category}}&{% endif %}page={{p.number}}">{{p.number}}</a></li>
+            {% if p.has_next %}
+                <li class="page-item"><a class="page-link" href="?{% if category %}category={{category}}&{% endif %}page={{p.number|add:'1'}}">{{p.number|add:"1"}}</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="?{% if category %}category={{category}}&{% endif %}page={{p.number|add:'1'}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+
+
+
+
+       {% endblock body %}

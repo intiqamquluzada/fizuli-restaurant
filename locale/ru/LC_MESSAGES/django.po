@@ -9,16 +9,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-16 22:52+0400\n"
-"PO-Revision-Date: 2023-10-09 21:25+0400\n"
+"PO-Revision-Date: 2024-02-26 16:37+0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
 #: templates/about.html:11
@@ -28,114 +26,113 @@ msgstr "О нас"
 #: templates/about.html:14 templates/base.html:72 templates/booking.html:14
 #: templates/contact.html:15 templates/menu.html:13
 msgid "Home"
-msgstr ""
+msgstr "ГЛАВНАЯ"
 
 #: templates/about.html:16 templates/base.html:73
-#, fuzzy
 #| msgid "About Us"
 msgid "About"
-msgstr "О нас"
+msgstr "О НАС"
 
 #: templates/about.html:46 templates/base.html:111 templates/index.html:95
 msgid "About Us"
-msgstr "О нас"
+msgstr "О НАС"
 
 #: templates/about.html:50 templates/index.html:99
 msgid "Read More"
-msgstr ""
+msgstr "Читать далее"
 
 #: templates/base.html:53
 msgid "Loading..."
-msgstr ""
+msgstr "Загрузка..."
 
 #: templates/base.html:78 templates/base.html:114 templates/menu.html:14
 msgid "Menu"
-msgstr ""
+msgstr "МЕНЮ"
 
 #: templates/base.html:79
-msgid "Catering Menu"
-msgstr ""
+msgid "Cetering Menu"
+msgstr "КЕЙТЕРИНГ "
 
 #: templates/base.html:80 templates/booking.html:11 templates/booking.html:15
 #: templates/contact.html:36
 msgid "Booking"
-msgstr ""
+msgstr "Бронирование"
 
 #: templates/base.html:82 templates/contact.html:16
 msgid "Contact"
-msgstr ""
+msgstr "КОНТАКТЫ"
 
 #: templates/base.html:110
 msgid "Links"
-msgstr ""
+msgstr "Ссылки"
 
 #: templates/base.html:112 templates/contact.html:12 templates/contact.html:29
 msgid "Contact Us"
-msgstr ""
+msgstr "Связаться с нами"
 
 #: templates/base.html:113 templates/booking.html:43
 msgid "Reservation"
-msgstr ""
+msgstr "Бронирование"
 
 #: templates/base.html:150
 msgid "Opening"
-msgstr ""
+msgstr "Открытие"
 
 #: templates/base.html:152
 msgid "Working hours"
-msgstr ""
+msgstr "Рабочее время"
 
 #: templates/booking.html:44
 msgid "Book A Table Online"
-msgstr ""
+msgstr "Забронируйте столик онлайн"
 
 #: templates/booking.html:79
 msgid "Reserve"
-msgstr ""
+msgstr "Бронировать"
 
 #: templates/booking.html:92 templates/index.html:163
 msgid "Youtube Video"
-msgstr ""
+msgstr "YouTube видео"
 
 #: templates/cateringmenu.html:9
 msgid "Fizuli Catering Menu"
-msgstr ""
+msgstr "Физули Кейтеринг Меню"
 
 #: templates/contact.html:30
 msgid "Contact For Any Query"
-msgstr ""
+msgstr "Контакт для любого запроса"
 
 #: templates/contact.html:40
 msgid "General"
-msgstr ""
+msgstr "Общий"
 
 #: templates/contact.html:44
 msgid "Technical"
-msgstr ""
+msgstr "Технический"
 
 #: templates/contact.html:63
 msgid "Your Name"
-msgstr ""
+msgstr "Ваше имя"
 
 #: templates/contact.html:69
 msgid "Your Email"
-msgstr ""
+msgstr "Ваш адрес электронной почты"
 
 #: templates/contact.html:75
 msgid "Subject"
-msgstr ""
+msgstr "Предмет"
 
 #: templates/contact.html:81
 msgid "Message"
-msgstr ""
+msgstr "Сообщение"
 
 #: templates/contact.html:85
 msgid "Send Message"
-msgstr ""
+msgstr "Отправить сообщение"
 
 #: templates/index.html:16
 msgid "Book A Table"
-msgstr ""
+msgstr "Бронировать столик"
 
 #: templates/index.html:36
 msgid "Master Chefs"
@@ -179,12 +176,12 @@ msgstr ""
 
 #: templates/menu.html:35 templates/menu.html:36
 msgid "All categories"
-msgstr ""
+msgstr "Категории"
 
 #: templates/menu.html:41
 msgid "Filter"
-msgstr ""
+msgstr "Фильтр "
 
 #: templates/menu.html:45
 msgid "Search"
-msgstr ""
+msgstr "Поиск"

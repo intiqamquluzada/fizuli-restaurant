@@ -212,7 +212,7 @@ class Subscribe(DateMixin, SlugMixin):
 
 
 class MainDetails(DateMixin, SlugMixin):
-    catering_menu_text = models.TextField(null=True, blank=True)
+    catering_menu_text = RichTextField(null=True, blank=True)
     location = models.TextField(verbose_name="Ünvan")
     phone_number = models.TextField(verbose_name="Əlaqə nömrəsi")
     email = models.EmailField(verbose_name="E-mail")
@@ -220,6 +220,7 @@ class MainDetails(DateMixin, SlugMixin):
     logo = models.ImageField(upload_to=Uploader.upload_photo_for_logo, verbose_name="Saytın loqosu")
     video_url = models.TextField(verbose_name="Video linki", null=True, blank=True)
     map_url = models.TextField(verbose_name="Xerite linki", null=True, blank=True)
+    contact_text = models.TextField(null=True, blank=True, verbose_name='Contact hissesi aciqlama')
 
     def __str__(self):
         return self.location

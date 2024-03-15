@@ -7,17 +7,17 @@
 
 {% block body %}
 
-            <div class="container-xxl py-5 bg-dark hero-header mb-5 headS" style="background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url({{ home_header.back_image.url }})">
+            <div class="container-xxl py-5 bg-dark hero-header mb-5 headS" style="background: linear-gradient(rgba(0, 0, 0, .0), rgba(15, 23, 43, .9)), url({{ home_header.back_image.url }})">
                 <div class="container my-5 py-5">
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="display-3 text-white animated slideInLeft">{{home_header.main_text}}</h1>
                             <p class="text-white animated slideInLeft mb-4 pb-2">{{home_header.sub_text}}</p>
-                            <a href="{% url 'booking' %}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">{% trans 'Book A Table' %}</a>
+			    <a href="{% url 'about' %}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">{% trans 'Explore us' %}</a>
                         </div>
-                        <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                            <img class="img-fluid" src="{{home_header.round_image.url}}" alt="">
-                        </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -25,50 +25,7 @@
         <!-- Navbar & Hero End -->
 
 
-        <!-- Service Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-                                <h5>{% trans 'Master Chefs' %}</h5>
-                                <p>{% trans 'We have experienced chefs.' %}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
-                                <h5>{% trans 'Quality Food' %}</h5>
-                                <p>{% trans 'Our meals quality are the best.' %}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
-                                <h5>{% trans 'Online Order' %}</h5>
-                                <p>{% trans 'You can reserve and online order.' %}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-headset text-primary mb-4"></i>
-                                <h5>{% trans '24/7 Service' %}</h5>
-                                <p>{% trans 'We serve to you 7/24.' %}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
+
 
 
         <!-- About Start -->
@@ -92,8 +49,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">{% trans 'About Us' %}</h5>
-                        <h1 class="mb-4"><i>{{index_about.head}}</i></h1>
+                       
+                       
                         <p class="mb-4">{{index_about.description|safe}}</p>
 
                         <a class="btn btn-primary py-3 px-5 mt-2" href="">{% trans 'Read More' %}</a>
@@ -133,7 +90,7 @@
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h5 class="section-title ff-secondary text-center text-primary fw-normal">{% trans 'Food Menu' %}</h5>
-            <h1 class="mb-5">{% trans 'Most Popular Items' %}</h1>
+            <h1 class="mb-5"> </h1>
         </div>
 
         <div class="row">

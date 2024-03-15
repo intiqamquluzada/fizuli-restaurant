@@ -24,81 +24,30 @@
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">{% trans 'Food Menu' %}</h5>
-                    <h1 class="mb-5">{% trans 'Most Popular Items' %}</h1>
+                    <h1 class="mb-5"> </h1>
         <div class="container">
               <div class="row" style="margin-bottom: 30px;" >
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                     <form method="GET">
-                         {% csrf_token %}
-  <div class="form-group d-flex justify-content-between" style="margin-bottom: 1rem;">
-    <select class="form-control" id="category" name="category" style="height: calc(3.25rem + 2px)">
-      <option value="" class="dropdown-toggle" style="display: none;">{% trans 'All categories' %} 	&#128315;</option>
-        <option value="" class="dropdown-toggle">{% trans 'All categories' %}</option>
-      {% for cat in categories %}
-        <option value="{{ cat.name }}">{{ cat.name }}</option>
-      {% endfor %}
-    </select>
-  <button type="submit" class="btn btn-warning" style="margin-left: 1rem;">{% trans 'Filter' %}</button>
-
-  </div>
-  {% if cat %}
-      <span class="btn btn-link" style="width: 50px; padding-top: 15px;"><strong style="color: red;">{% trans 'Search' %} </strong>: {{cat}} </span>
-      {% endif %}
-</form>
 
 
-                  </div>
-
-                <div class="row">
-{% for f in p %}
-            <div class="col-md-4 mb-3">
+                 <div class="row">
+           {% for cat in categories %}
+            <div class="col-md-3 mb-3">
                 <div class="card">
                     <div class="card-img-container">
-
-
-                        <img class="card-img-top" src="{{f.image.url}}" alt="Card image cap" style="width:300px;height:219px;">
+                        <a href="{% url 'foods' %}?category={{cat.name}}" class="hover-link">{{cat.name}}</a>
+                        <img class="card-img-top" src="{{cat.image.url}}" alt="Card image cap" style="height:286px;width:100%;">
                     </div>
                     <div class="card-body">
-                        <a href="" class="section-title ff-secondary text-center text-primary fw-normal">{{f.food_name}}</a>
-                        <hr>
-                        <p style="color:skyblue;" class="section-title ff-secondary " >{{f.receipt}}</p> <br>
-                        <p style="color:red;" class="section-title ff-secondary text-center text-danger fw-normal">{{f.category.name}}</p>
-                        <p style="color:green;" class="ff-secondary">{{f.price}}</p>
+                        <a href="{% url 'foods' %}?category={{cat.name}}" class="btn btn-warning">{{cat.name}}</a>
                     </div>
                 </div>
             </div>
-         {% endfor %}
+           {% endfor %}
         </div>
             </div>
         </div>
         <!-- Menu End -->
-<div class="pagination-container">
-    <nav aria-label="Page navigation example" class="paginationNav mx-auto ml-6">
-        <ul class="pagination">
-            {% if p.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?{% if category %}category={{category}}&{% endif %}page={{p.number|add:'-1'}}" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-            {% endif %}
-            {% if p.number > 1 %}
-                <li class="page-item"><a class="page-link" href="?{% if category %}category={{category}}&{% endif %}page={{p.number|add:'-1'}}">{{p.number|add:"-1"}}</a></li>
-            {% endif %}
-            <li class="page-item"><a class="page-link active" href="?{% if category %}category={{category}}&{% endif %}page={{p.number}}">{{p.number}}</a></li>
-            {% if p.has_next %}
-                <li class="page-item"><a class="page-link" href="?{% if category %}category={{category}}&{% endif %}page={{p.number|add:'1'}}">{{p.number|add:"1"}}</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="?{% if category %}category={{category}}&{% endif %}page={{p.number|add:'1'}}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            {% endif %}
-        </ul>
-    </nav>
-</div>
+
 
 
 

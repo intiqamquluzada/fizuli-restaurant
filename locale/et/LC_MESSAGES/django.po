@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-16 22:52+0400\n"
-"PO-Revision-Date: 2023-10-09 21:24+0400\n"
+"PO-Revision-Date: 2024-02-26 16:34+0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -21,18 +21,17 @@ msgstr ""
 
 #: templates/about.html:11
 msgid "Meist"
-msgstr ""
+msgstr "MEIST"
 
 #: templates/about.html:14 templates/base.html:72 templates/booking.html:14
 #: templates/contact.html:15 templates/menu.html:13
 msgid "Home"
-msgstr ""
+msgstr "AVALEHT"
 
 #: templates/about.html:16 templates/base.html:73
-#, fuzzy
 #| msgid "About Us"
 msgid "About"
-msgstr "Meist"
+msgstr "MEIST"
 
 #: templates/about.html:46 templates/base.html:111 templates/index.html:95
 msgid "About Us"
@@ -40,56 +39,56 @@ msgstr "Meist"
 
 #: templates/about.html:50 templates/index.html:99
 msgid "Read More"
-msgstr ""
+msgstr "Loe Rohkem"
 
 #: templates/base.html:53
 msgid "Loading..."
-msgstr ""
+msgstr "Laadimine.."
 
 #: templates/base.html:78 templates/base.html:114 templates/menu.html:14
 msgid "Menu"
-msgstr ""
+msgstr "MENÜÜ"
 
 #: templates/base.html:79
-msgid "Catering Menu"
-msgstr ""
+msgid "Cetering Menu"
+msgstr "CATERING"
 
 #: templates/base.html:80 templates/booking.html:11 templates/booking.html:15
 #: templates/contact.html:36
 msgid "Booking"
-msgstr ""
+msgstr "Broneeri"
 
 #: templates/base.html:82 templates/contact.html:16
 msgid "Contact"
-msgstr ""
+msgstr "Kontaktid"
 
 #: templates/base.html:110
 msgid "Links"
-msgstr ""
+msgstr "Lingid"
 
 #: templates/base.html:112 templates/contact.html:12 templates/contact.html:29
 msgid "Contact Us"
-msgstr ""
+msgstr "Võtka meiega ühendust"
 
 #: templates/base.html:113 templates/booking.html:43
 msgid "Reservation"
-msgstr ""
+msgstr "Reserveerimine"
 
 #: templates/base.html:150
 msgid "Opening"
-msgstr ""
+msgstr "Avamine"
 
 #: templates/base.html:152
 msgid "Working hours"
-msgstr ""
+msgstr "Töötunnid"
 
 #: templates/booking.html:44
 msgid "Book A Table Online"
-msgstr ""
+msgstr "Broneerige laud Internetis"
 
 #: templates/booking.html:79
 msgid "Reserve"
-msgstr ""
+msgstr "Reserveeri"
 
 #: templates/booking.html:92 templates/index.html:163
 msgid "Youtube Video"
@@ -97,11 +96,11 @@ msgstr ""
 
 #: templates/cateringmenu.html:9
 msgid "Fizuli Catering Menu"
-msgstr ""
+msgstr "Fizuli Catering Menu"
 
 #: templates/contact.html:30
 msgid "Contact For Any Query"
-msgstr ""
+msgstr "Võtke meiega uhendust"
 
 #: templates/contact.html:40
 msgid "General"
@@ -169,7 +168,7 @@ msgstr ""
 
 #: templates/index.html:135 templates/menu.html:10 templates/menu.html:26
 msgid "Food Menu"
-msgstr ""
+msgstr "Menüü"
 
 #: templates/index.html:136 templates/menu.html:27
 msgid "Most Popular Items"
@@ -177,12 +176,12 @@ msgstr ""
 
 #: templates/menu.html:35 templates/menu.html:36
 msgid "All categories"
-msgstr ""
+msgstr "Kõik kategooriad"
 
 #: templates/menu.html:41
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #: templates/menu.html:45
 msgid "Search"
-msgstr ""
+msgstr "otsing"

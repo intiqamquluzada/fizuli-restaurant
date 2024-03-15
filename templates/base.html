@@ -11,8 +11,8 @@
     <meta charset="utf-8">
     <title>Restaurant</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="restaurant" name="keywords">
+    <meta content="restaurant azerbaijan estonia ee az" name="description">
 
     <!-- Favicon -->
     <link href="{{details.logo.url}}" rel="icon">
@@ -60,7 +60,7 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="{% url 'home' %}" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><img src="{{details.logo.url}}" alt=""></h1>
+                    <h1 class="text-primary m-0"><img src="{{details.logo.url}}" alt="" style="max-height:90px;!important"></h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -69,14 +69,14 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
 
-                        <a href="{% url 'home' %}" class="nav-item nav-link {% if request.path == '/' %}  active {% endif %}">{% trans 'Home' %}</a>
-                        <a href="{% url 'about' %}" class="nav-item nav-link {% if request.path == '/about/' %}  active {% endif %}">{% trans 'About' %}</a>
+			    <a href="{% url 'home' %}" class="nav-item nav-link {% if request.path == '/' %}  active {% endif %}">{% if LANGUAGE_CODE == 'en' %}Home{% elif LANGUAGE_CODE == 'et' %}AVALEHT{% else %}ГЛАВНАЯ {% endif %}</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link {% if request.path == '/about/' %}  active {% endif %}">{% trans 'Meist' %}</a>
                         {% comment %}
                         <a href="{% url 'service' %}" class="nav-item nav-link {% if request.path == '/service/' %}  active {% endif %}">{% trans 'Service' %}</a>
                        {% endcomment %}
                         <a href="{% url 'menu' %}" class="nav-item nav-link {% if request.path == '/menu/' %}  active {% endif %}">{% trans 'Menu' %}</a>
-                        <a href="{% url 'catering' %}" class="nav-item nav-link {% if request.path == '/catering/menu/' %}  active {% endif %}">{% trans 'Catering Menu' %}</a>
-                        <a href="{% url 'booking' %}" class="nav-item nav-link {% if request.path == '/booking/' %}  active {% endif %}">{% trans 'Booking' %}</a>
+                        <a href="{% url 'catering' %}" class="nav-item nav-link {% if request.path == '/catering/menu/' %}  active {% endif %}">{% trans 'Cetering Menu' %}</a>
+                        
 
                         <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}  active {% endif %}">{% trans 'Contact' %}</a>
                     </div>
@@ -109,7 +109,7 @@
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">{% trans 'Links' %}</h4>
                         <a class="btn btn-link" href="{% url 'about' %}">{% trans 'About Us' %}</a>
                         <a class="btn btn-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
-                        <a class="btn btn-link" href="{% url 'booking' %}">{% trans 'Reservation' %}</a>
+                        
                         <a class="btn btn-link" href="{% url 'menu' %}">{% trans 'Menu' %}</a>
 
 

@@ -27,67 +27,29 @@
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">{% trans 'Contact Us' %}</h5>
-                    <h1 class="mb-5">{% trans 'Contact For Any Query' %}</h1>
+		    <h1 class="mb-5">{{details.contact_text}}</h1>
                 </div>
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="row gy-4">
-                            <div class="col-md-4">
-                                <h5 class="section-title ff-secondary fw-normal text-start text-primary">{% trans 'Booking' %}</h5>
-                                <p><i class="fa fa-envelope-open text-primary me-2"></i>book@example.com</p>
+                             <div class="col-12">
+                        <div class="row gy-4">
+                            <div class="col-md-12">
+                                <h5 class=""><i class="fa fa-phone-alt me-3"></i>56399572</h5>
+                                <p><i class="fa fa-envelope-open text-primary me-2"></i>{{details.email}}</p>
                             </div>
-                            <div class="col-md-4">
-                                <h5 class="section-title ff-secondary fw-normal text-start text-primary">{% trans 'General' %}</h5>
-                                <p><i class="fa fa-envelope-open text-primary me-2"></i>info@example.com</p>
-                            </div>
-                            <div class="col-md-4">
-                                <h5 class="section-title ff-secondary fw-normal text-start text-primary">{% trans 'Technical' %}</h5>
-                                <p><i class="fa fa-envelope-open text-primary me-2"></i>tech@example.com</p>
-                            </div>
+
                         </div>
                     </div>
-                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                        </div>
+                    </div>
+                    <div class="col-md-12 wow fadeIn" data-wow-delay="0.1s">
                         <iframe class="position-relative rounded w-100 h-100"
                             src="{{details.map_url}}"
                             frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
                             tabindex="0"></iframe>
                     </div>
-                    <div class="col-md-6">
-                        <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form method="POST">
-                                {% csrf_token %}
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            {{form.name_and_surname}}
-                                            <label for="name">{% trans 'Your Name' %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            {{ form.email }}
-                                            <label for="email">{% trans 'Your Email' %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                        {{ form.subject }}
-                                            <label for="subject">{% trans 'Subject' %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                        {{form.message}}
-                                            <label for="message">{% trans 'Message' %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">{% trans 'Send Message' %}</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

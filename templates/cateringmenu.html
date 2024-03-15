@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 {% load static %}
 
 {% block body %}
@@ -28,7 +30,7 @@
 
     </div>
 </section>
- <div class="container-xxl py-5">
+ <div class="container-xxl py-5" style="background-color: #0F172B;">
 <div class="container">
 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 <div class="container">
@@ -42,10 +44,10 @@
                         <img class="card-img-top" src="{{f.image.url}}" alt="Card image cap" style="width:300px;height:219px;">
                     </div>
                     <div class="card-body">
-                        <a href="" class="section-title ff-secondary text-center text-primary fw-normal">{{f.name}}</a>
+                        <a href="" class="section-title  text-center text-primary fw-normal">{{f.name}}</a>
                         <hr>
-                        <p style="color:skyblue;" class="section-title ff-secondary " >{{f.ingredients}}</p> <br>
-                        <p style="color:red;" class="section-title ff-secondary text-center text-danger fw-normal">{{f.category.name}}</p>
+                        <p style="color:skyblue;" class="section-title  " >{{f.ingredients}}</p> <br>
+                        <p style="color:red;" class="section-title  text-center text-danger fw-normal">{{f.category.name}}</p>
                         <p style="color:green;" class="ff-secondary">{{f.price}}</p>
                     </div>
                 </div>
@@ -57,6 +59,7 @@
 </div>
  </div>
     <!--.menu-cart-->
+<br>
 <div class="pagination-container" style="margin-left:70px;">
     <nav aria-label="Page navigation example" class="paginationNav mx-auto ml-6">
         <ul class="pagination">

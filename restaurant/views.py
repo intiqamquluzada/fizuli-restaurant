@@ -128,6 +128,32 @@ def booking_view(request):
     return render(request, "booking.html", context)
 
 
+def foods_view(request):
+    foods = Menu.objects.order_by("-created_at")
+    categories = Category.objects.order_by("name")
+    cat_name = request.GET.get("category")
+
+    if cat_name:
+        foods = foods.filter(category__name=cat_name)
+
+    paginator = Paginator(foods, 6)
+    page = request.GET.get('page', 1)
+    p = paginator.get_page(page)
+    try:
+        p = paginator.page(page)
+    except PageNotAnInteger:
+        p = paginator.page(1)
+    except EmptyPage:
+        p = paginator.page(paginator.num_pages)
+    context = {
+        "foods": foods,
+        "categories": categories,
+        "p": p,
+        "category": cat_name,
+    }
+    return render(request, "foods.html", context)
+
+
 def our_team(request):
     context = {}
     return render(request, "team.html", context)
@@ -137,7 +163,7 @@ def catering_menu(request):
     meals = CateringMenu.objects.order_by("-created_at")
     categories = CateringMenuCategories.objects.order_by("-created_at")
 
-    paginator = Paginator(meals, 1)
+    paginator = Paginator(meals, 3)
     page = request.GET.get('page', 1)
     p = paginator.get_page(page)
     try:

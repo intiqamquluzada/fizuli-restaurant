@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-16 22:52+0400\n"
-"PO-Revision-Date: 2023-10-09 21:25+0400\n"
+"PO-Revision-Date: 2024-02-26 16:41+0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -26,10 +26,9 @@ msgstr "About us"
 #: templates/about.html:14 templates/base.html:72 templates/booking.html:14
 #: templates/contact.html:15 templates/menu.html:13
 msgid "Home"
-msgstr ""
+msgstr "Home page"
 
 #: templates/about.html:16 templates/base.html:73
-#, fuzzy
 #| msgid "About Us"
 msgid "About"
 msgstr "About us"
@@ -40,19 +39,19 @@ msgstr "About us"
 
 #: templates/about.html:50 templates/index.html:99
 msgid "Read More"
-msgstr ""
+msgstr "Read More"
 
 #: templates/base.html:53
 msgid "Loading..."
-msgstr ""
+msgstr "Loading..."
 
 #: templates/base.html:78 templates/base.html:114 templates/menu.html:14
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: templates/base.html:79
-msgid "Catering Menu"
-msgstr ""
+msgid "Cetering Menu"
+msgstr "Cetering Menu"
 
 #: templates/base.html:80 templates/booking.html:11 templates/booking.html:15
 #: templates/contact.html:36
@@ -61,15 +60,15 @@ msgstr ""
 
 #: templates/base.html:82 templates/contact.html:16
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #: templates/base.html:110
 msgid "Links"
-msgstr ""
+msgstr "Links"
 
 #: templates/base.html:112 templates/contact.html:12 templates/contact.html:29
 msgid "Contact Us"
-msgstr ""
+msgstr "Contact Us"
 
 #: templates/base.html:113 templates/booking.html:43
 msgid "Reservation"
@@ -97,11 +96,11 @@ msgstr ""
 
 #: templates/cateringmenu.html:9
 msgid "Fizuli Catering Menu"
-msgstr ""
+msgstr "Fizuli Catering Menu"
 
 #: templates/contact.html:30
 msgid "Contact For Any Query"
-msgstr ""
+msgstr "Contact For Any Query"
 
 #: templates/contact.html:40
 msgid "General"
@@ -145,7 +144,7 @@ msgstr ""
 
 #: templates/index.html:45
 msgid "Quality Food"
-msgstr ""
+msgstr "Quality Food"
 
 #: templates/index.html:46
 msgid "Our meals quality are the best."
@@ -169,20 +168,20 @@ msgstr ""
 
 #: templates/index.html:135 templates/menu.html:10 templates/menu.html:26
 msgid "Food Menu"
-msgstr ""
+msgstr "Food Menuu"
 
 #: templates/index.html:136 templates/menu.html:27
 msgid "Most Popular Items"
-msgstr ""
+msgstr "Most Popular Items"
 
 #: templates/menu.html:35 templates/menu.html:36
 msgid "All categories"
-msgstr ""
+msgstr "All categories"
 
 #: templates/menu.html:41
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #: templates/menu.html:45
 msgid "Search"
-msgstr ""
+msgstr "Search"
